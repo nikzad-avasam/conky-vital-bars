@@ -1,0 +1,69 @@
+#conky config created by sam nikzad
+conky.config = {
+	alignment = 'top_right',
+	maximum_width = 1440,
+	minimum_width = 800,
+	gap_x = 0,
+	gap_y = 0,
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	xinerama_head = 3,
+
+	own_window = true,
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_type = 'Conky',
+	own_window_class = 'Conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+
+	short_units = true,
+     format_human_readable = true,
+    times_in_seconds = false,
+	update_interval = 1,
+	use_spacer = 'none',
+	net_avg_samples = 1,
+	cpu_avg_samples = 1,
+	top_cpu_separate = false,
+
+	use_xft = true,
+	override_utf8_locale = true,
+
+	draw_shades = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	default_bar_width = 50,
+        default_bar_height = 6,
+	default_graph_width = 60,
+        default_graph_height = 35,
+
+	own_window_colour = '000000',
+	default_color = 'bbbbbb',
+	default_shade_color = '111111',
+        color1 = '666666',
+        color2 = '000000',
+        color3 = '66a0ff',
+  
+}
+
+conky.text = [[
+${voffset 20}
+${color c4c4c4}${alignc}${font space age:size=20}
+${alignc}${time %A}
+${voffset 25}${alignc}${time %R}${font}${color c4c4c4}
+
+${color c4c79d}${voffset 50}${alignc}${font neuropolitical}CPU: ${cpu} %
+${alignc}${color c4c79d}${cpubar 4,150}${color}
+${color2 F6D7A7}${alignc}${cpugraph 25,150 c4c79d 000000 -t}	
+
+${voffset 0}${alignc}${color 8FC1D4}RAM: ${memperc} %
+${alignc}${color 8FC1D4}${membar 4,150}${color}
+${color2}${alignc}${memgraph 25,150 8FC1D4 000000 -t}	
+
+${voffset 10}${alignc}${color d4aaa7}Disk: ${fs_used_perc} %
+${alignc}${color d4aaa7}${fs_bar 4,150}${color}
+${color2}${alignc}${diskiograph 25,150 d4aaa7 000000 -t}	
+
+]];
